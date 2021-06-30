@@ -27,6 +27,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
+      - uses: helm/kind-action@v1.1.0
+        with:
+          cluster_name: kind
+          wait: 10m0s
+      - name: check kind cluster
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
+          kubectl get pods -A
       # Runs a single command using the runners shell
       - name: List of files
         run: ls -la
