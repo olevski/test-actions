@@ -47,3 +47,6 @@ jobs:
             deployCrd: true
           secretValue: $SECRET_VALUE
           EOF
+      - name: Print file
+        run: |
+          cat new_file.txt
