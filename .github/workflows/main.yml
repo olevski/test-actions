@@ -49,4 +49,4 @@ jobs:
           EOF
       - name: Print file
         run: |
-          cat new_file.txt
+          cat test-values.yaml
