@@ -50,3 +50,9 @@ jobs:
       - name: Print file
         run: |
           cat test-values.yaml
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-logs
+          path: |
+            test-values.yaml
