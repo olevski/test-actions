@@ -36,3 +36,14 @@ jobs:
           echo "new file" > new_file.txt
       - name: List of files
         run: ls -la
+      - name: Make new file
+        env:
+          SECRET_VALUE: ${{ secrets.SECRET_VALUE }}
+        run: |
+          cat <<EOF > test-values.yaml
+          amalthea:
+            scope:
+              namespaces: [default]
+            deployCrd: true
+          secretValue: $SECRET_VALUE
+          EOF
