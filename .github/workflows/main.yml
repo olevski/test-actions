@@ -31,6 +31,7 @@ jobs:
         with:
           cluster_name: kind
           wait: 10m0s
+          version: v0.11.1
       - name: check kind cluster
         run: |
           kubectl cluster-info
